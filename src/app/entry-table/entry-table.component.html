@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-display-header [slotData] = "slotData"></app-display-header>
+<!-- Add new car details -->
+<form class="addForm" #filterData = "ngForm" (ngSubmit) = "onClickSubmit(filterData.value)" >
+    <input class="textInput" type = "text" name = "cno" placeholder = "Car no" ngModel required>
+    <input class="textInput" type = "text" name = "color" placeholder = "Color" ngModel required>
+    <input class="button add"type = "submit" value = "+Add details">
+ </form>
+ <!-- Filter based on car number plate -->
+ <form class="addForm" #queryData ="ngForm" (ngSubmit)="onClickQuery(queryData.value)">
+     <input class="textInput" type="text" name = "cQuery" placeholder = "Type car number" [(ngModel)]="query" />
+ </form>
+ <!-- <input [(ngModel)]="query"> -->
+ <div *ngIf="active">
+     <button (click)="onClickButton()">Click this</button>
+ </div>
+ <div *ngIf="!active">
+     <button>Click this</button>
+ </div>
+ {{text}}
+<table>
+    <tr>
+      <th>#</th>
+      <th>Car No</th>
+      <th>Color</th>
+      <th>Slot No</th>
+      <th></th>
+    </tr>
+    
+<!-- <div *ngFor="let item of items | filterPipe:'cno,color':query">{{item.text}}</div> -->
+    <tr *ngFor="let c of carList | filterPipe:'cno':query;index as i ">
+      <td>{{i+1}}</td>
+      <td>{{c.cno}}</td>
+      <td>{{c.color}}</td>
+      <td>{{c.slotNo}}</td>
+      <td><button (click)="onPressRemove(c)" class="button">Remove</button></td>
+    </tr>
+    
+  </table>
+
+  <section>
+      <p class="amount">Amount collected:{{amountCollected}}</p>
+  </section>

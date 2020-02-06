@@ -1,0 +1,7 @@
+<form #slotsData = "ngForm" (ngSubmit) = "onClickSubmit(slotsData.value)" >
+    <input type = "number" name = "totalSlots" placeholder = "Total parking places" min = 0 ngModel required>
+    <br/>
+    <input type = "number" name = "parked" placeholder = "Cars parked" min = 0 ngModel required>
+    <br/>
+    <input type = "submit" value = "submit">
+ </form>

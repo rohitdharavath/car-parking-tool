@@ -1,0 +1,38 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th{
+      background-color: grey;
+      color:white;
+      font-weight: 300;
+      font-size: 18px;
+  }
+
+  .amount{
+      text-align: center;
+      padding:10px;
+      border:1px solid grey;
+  }
+  .button{
+      padding:5px;
+      color:white;
+      background-color: grey;
+  }
+  .add{
+      padding:10px;
+  }
+  .textInput{
+      margin:10px;
+      padding:10px;
+  }
+
+  .addForm{
+      text-align: right;
+  }
